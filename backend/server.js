@@ -11,13 +11,7 @@ const app = express();
 app.use(express.json());
 
 // ✅ Enable CORS (allow frontend at port 3000 to connect)
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 // ✅ Connect to MongoDB
 mongoose
