@@ -10,11 +10,11 @@ export default function NewDreamForm() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/dreams`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title, text }),
-    });
+      const res = await fetch("http://localhost:5000/api/dreams", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, text }),
+      });
 
       const data = await res.json();
 
